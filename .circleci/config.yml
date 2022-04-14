@@ -33,14 +33,14 @@ jobs:
               --region us-east-1
     # Exercise: Smoke Testing
   smoke_test:
-  docker:
-    - image: alpine:latest
-  steps:
-    - run:
-        name: Test job
-        # Fail the job intentionally to simulate an error.
-        command:  return 1
-    - destroy_environment
+    docker:
+      - image: alpine:latest
+    steps:
+      - run:
+          name: Test job
+          # Fail the job intentionally to simulate an error.
+          command:  return 1
+      - destroy_environment
 
 # Sequential workflow
 workflows:
